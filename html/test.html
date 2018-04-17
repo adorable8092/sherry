@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>네이버 회원가입</title>
+    <script>
+        window.onload = function(){
+        var form = document.querySelector('#form');
+
+        form.onsubmit = function() {
+
+            var id = document.querySelector('#id').value;
+            var pw = document.querySelector('#pw').value;
+
+            if (id.trim().length < 1) {
+                alert('아이디를 입력하세요.');
+                return false;
+            }
+
+            if (pw.trim().length < 8) {
+                alert('비밀번호를 8자 이상입력하세요.');
+                return false;
+            }
+
+            return true;
+            };
+        };
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+        }
+        
+        #title{
+            width: 390px;
+
+            margin: 0 auto;
+
+            overflow: hidden;
+            
+            padding-bottom: 5px;
+        }
+
+        #wrap {
+            
+            padding: 10px;
+            
+            width: 360px;
+            
+            border: 2px solid grey; 
+
+            margin: 0 auto;
+        }
+        
+        #section {            
+            margin: 0 auto;
+            
+            width: 310px;
+        }
+                
+        hr{
+            width: 300px;
+        }
+        
+        #btn {
+            background-color: green;
+            color: white;
+            
+            margin-top: 10px;
+            margin-left: 120px;
+            
+            border-radius: 5px;
+            width: 70px;
+            height: 35px;
+
+        }
+        
+        #pw {
+            width: 86px;
+        }
+        
+        #chk {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        
+    </style>
+
+</head>
+
+<body>
+    
+    <h1 id="title">실명확인 회원가입</h1>
+    
+    <div id="wrap">
+        <div id="section">
+        <input type="radio">아이핀(I-Pin)
+        <input type="radio" checked="checked">주민번호등록
+        <br><br>
+        <form id="form">
+            이름 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="id" type="text"><br><br>
+            주민등록번호 <input id="pw" type="text"> - <input id="pw" type="text"><br>
+            <div id="chk">
+            <input type="checkbox"> 주민등록번호처리에 동의합니다.
+            </div>
+            <hr> 
+            <button id="btn" type="submit" value="확인">확인</button>
+        </form>
+        </div> 
+    </div>
+    
+</body>
+</html>
